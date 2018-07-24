@@ -1,0 +1,50 @@
+// Série de variáveis, funções e lógicas para garantir uma tipografia correta para o site, ancorada na altura da linha do texto.
+
+// CABEÇALHOS
+
+// Cor dos cabeçalhos
+h1,h2,h3,h4,h5,h6
+  color: $font-color_heading
+  font-family: if($font__heading != null, ($font__heading, $font__base), (if($font__body != null, ($font__body, $font__base), $font__base)))
+  font-weight: 900
+
+// Loop pros headings em telas pequenas, gerando as propriedades corretas de acordo com as propriedades definidas em cada objeto
+@each $heading, $properties in $headings
+  #{$heading}
+    font-size: remize(nth($properties, 1))
+    line-height: leading(nth($properties, 2))
+    margin: params(false,nth($properties, 3),0,nth($properties, 4))
+
+// Definições para parágrafos
+p
+  font-size: 1rem
+  line-height: leading(1)
+  margin: params(false, 1, 0, 1)
+  color: inherit
+  max-width: $max-width
+  &.text_right
+    text-align: right
+    margin-right: 0
+    margin-left: auto
+  &.text_center
+    text-align: center
+    margin-right: auto
+    margin-left: auto
+
+ul, ol
+  line-height: leading(1)
+  padding: 0
+  > li
+    margin: 0 0 leading(.5)
+
+@media screen and (min-width: $font-breakpoint)
+  // Loop pros headings em telas grandes
+  @each $heading, $properties in $headings_large
+    #{$heading}
+      font-size: remize(nth($properties, 1))
+      line-height: leading(nth($properties, 2),true)
+      margin: params(true,nth($properties, 3),0,nth($properties, 4))
+
+  p
+    line-height: leading(1, true)
+    margin: params(true, 1, 0, 1)

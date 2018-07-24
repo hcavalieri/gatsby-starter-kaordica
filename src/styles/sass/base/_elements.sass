@@ -1,0 +1,42 @@
+\:root
+  font-size: $font-size
+
+*, *::before, *::after
+  box-sizing: inherit
+  font-family: inherit
+::selection
+  background: transparentize($color__primary,.3)
+  color: white
+html
+  box-sizing: border-box
+  overflow-x: hidden
+  color: $font-color
+  font-family: if($font__body != null, ($font__body, $font__base), $font__base)
+
+body
+  margin: 0
+
+a
+  color: $color__link
+  transition: $transition__duration opacity $transition__function
+  &:hover
+    opacity: .8
+
+button
+  font-family: inherit
+  font-size: 1rem
+
+img
+  display: block
+  max-width: 100%
+  margin: leading(1.5) auto
+
+hr
+  height: 1px
+  border: 0
+  background: transparentize($font-color_heading, .7)
+  margin: params(false, 1.5, 0)
+
+@media screen and (min-width: $font-breakpoint)
+  \:root
+    font-size: $font-size_large

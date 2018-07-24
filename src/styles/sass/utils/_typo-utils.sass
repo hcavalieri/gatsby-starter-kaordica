@@ -1,0 +1,23 @@
+// Função que retorna um valor em rem ancorado em um multiplicador e na altura da linha. A variável $large é para quando queira se aplicar o estilo para telas maiores que o breakpoint definido nas variáveis de tipografia
+@function leading($multiplier, $large : false)
+    $lineHeight: $line-height !default
+    @if $large
+        // Se for tela grande, usar altura da linha de tela grande
+        $lineHeight: $line-height_large
+    @return #{$multiplier * $lineHeight + 'rem'}
+
+
+@function remize($number)
+    @return #{$number + 'rem'}
+
+
+// Função para retornar valores em rem para propriedades com dois ou mais parâmetros. Pode ser usado pra padding, margem, largura de borda, etc.
+@function params($large, $top, $right : null, $bottom : null, $left : null)
+    @if $right == null // Se só passarem o valor do topo, retornar somente ele
+        @return (leading($top,$large))
+    @else if $bottom == null // Se passarem o valor da direita, a função vem pra esse passo, então não precisamos mais testar se a direita é nula
+        @return (leading($top,$large) leading($right,$large))
+    @else if $left == null // Mesmo esquema da anterior
+        @return (leading($top,$large) leading($right,$large) leading($bottom,$large))
+    @else if $left != null // Mesmo esquema da anterior
+        @return (leading($top,$large) leading($right,$large) leading($bottom,$large) leading($left,$large))

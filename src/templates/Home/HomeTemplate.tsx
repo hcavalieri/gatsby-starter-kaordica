@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { BasicLayout } from '../../layouts/BasicLayout';
+import { HomeFeedback } from './components/HomeFeedback';
 
 export interface IHomeTemplateProps {
   meta: {
@@ -27,7 +28,7 @@ export const HomeTemplate: React.SFC<IHomeTemplateProps> = props => {
         <li>If you haven't already, be sure to install the Prettier extension in your editor.</li>
         <li>Start building your site!</li>
       </ol>
-      <p>Feel free to leave your feedback and ask some questions by filing an issue in <a href="https://github.com/hcavalieri/gatsby-starter-kaordica">the repo</a> and if you want to contribute, just fork this repo and submit a PR!</p>
+      <HomeFeedback />
     </BasicLayout>
   )
 }

@@ -1,66 +1,43 @@
-// UNCOMMENT EVERYTHING BELOW AND FOLOW INSTRUCTIONS
+// FOLOW INSTRUCTIONS IN COMMENTS
+// (FEEL FREE TO DELETE THEM)
 
-// const crypto = require('crypto');
-// const path = require('path');
+// ================
+// MODIFYING NODES CREATED BY SOURCE-SANITY
+// ================
+
 // const slugify = require('slugify');
-// const sanityClient = require('@sanity/client');
 
-// require("dotenv").config({
-//   path: `.env.${process.env.NODE_ENV}`,
-// });
+// Sometimes you'll need to attach new fields to
+// nodes created by the gatsby-source-sanity plugin
+// To do so, you'll use the onCreateNode API and check
+// the node's type:
 
-// // Write your sanity queries in the file required below:
-// const queries = require('./sanityQueries');
+// exports.onCreateNode = ({ node, actions }) => {
+//   const { createNodeField } = actions;
+//   const { type } = node.internal;
 
-// // And your GraphQL queries in graphqlQueries.js
-// const graphqlQueries = require('./graphqlQueries');
-
-// // Remember to update your .env files with the
-// // correct IDs and Datasets
-// const Sanity = sanityClient({
-//   projectId: process.env.SANITY_ID,
-//   dataset: process.env.SANITY_DATASET,
-//   useCdn: true,
-// });
-
-// // sourceNodes is used to fetch data from external
-// // sources. Reference: https://next.gatsbyjs.org/docs/node-apis/#sourceNodes
-// exports.sourceNodes = async ({
-//   actions
-// }) => {
-//   const {
-//     createNode
-//   } = actions;
-//   const data = await Sanity.fetch(queries);
-
-//   // Sample on how to create nodes for the data:
-//   if (data.sample) {
-//     data.sample.forEach(node => {
-//     // Gatsby's API for creating nodes on graphQL
-//     // reference: https://next.gatsbyjs.org/docs/actions/#createNode
-//       createNode({
-//         ...node,
-
-//         // mandatory fields
-//           id: node._id,
-//           parent: null,
-//           children: [],
-//           internal: {
-//             type: 'Sample',
-//             // Content digest is used for caching the node
-//             contentDigest: crypto
-//               .createHash(`md5`)
-//               .update(JSON.stringify(node))
-//               .digest(`hex`),
-//             description: node.title,
-//           }
-//       })
+//   // Example of attaching a "slug" field to
+//   // post nodes (although this should be generated
+//   // inside of Sanity using the slug object)
+//   if (type === 'POST') {
+//     createNodeField({
+//       node,
+//       name: 'slug',
+//       value: slugify(node.name, { lower: true }),
 //     })
 //   }
-
 // }
 
-// // Reference: https://next.gatsbyjs.org/docs/node-apis/#createPages
+// ================
+// CREATING PAGES FROM DATA
+// ================
+
+// Write your GraphQL queries for data that will be
+// used to create pages in ./graphqlQueries.js
+// const graphqlQueries = require('./graphqlQueries');
+
+// And then use the createPages API to do so
+// Reference: https://next.gatsbyjs.org/docs/node-apis/#createPages
 // exports.createPages = async ({ actions, graphql }) => {
 //   const { createPage } = actions;
 

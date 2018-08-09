@@ -6,11 +6,13 @@ This folder is meant to concentrate global styles and reusable styled-components
 
 ### The `helpers` folder
 
-Here's where you'll find useful mixins and functions to be used with styled-components, such as mediaQueries. Feel free to create a PR with your addition to this collection!
+Here's where you'll find useful mixins and functions to be used with styled-components, such as mediaQueries and some typography functions. Feel free to create a PR with your addition to this collection!
 
-### The `sass` folder
+### The `global` folder
 
-All global CSS is meant to be applied through this sass folder. The default files are related mostly to typography, setting the rythm for all written content for the website. Make sure to change these before styling your website.
+All global CSS is meant to be applied through this folder. The default files are related mostly to typography, setting the rythm for all written content for the website. Make sure to change these - especially the typography, misc and color variables - before styling your website.
+
+**Note:** If you need custom global styles, go ahead and include them in the string exported as default in `customGlobal.ts`.
 
 ### `theme.ts`
 

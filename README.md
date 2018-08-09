@@ -5,19 +5,19 @@ A very opinionated [Gatsby](https://gatsbyjs.org) starter that reflects [Kaordic
 ## Our way of working
 
 - CMS of choice for most projects: [Sanity](https://sanity.io)
-- Global styling through [Sass](https://sass-lang.com/) (mainly typography and normalizers)
-- Component styling through [Styled Components](https://www.styled-components.com/)
+- Styling through [Styled Components](https://www.styled-components.com/)
+- Global styling with a strong focus on typography based on the desired line height
 - Hosting through [Netlify](https://www.netlify.com/)
 - Scripting in Typescript and `.tsx` files. For an example of this in practice, as this extension is not very well supported by Gatsby if put inside the `/src/pages` folder, we usually just run GraphQL queries in simple `.jsx` files and then render template components written in `.tsx`. You can take a look at this pattern by referencing to `./src/index.jsx`.
 
 ## Usage
 
-1. Install Node, npm and the gatsby cli (`npm i -g gatsby-cli`)
-1. `cd` into the desired folder to store your project
-1. Run `gatsby new site-name https://github.com/hcavalieri/gatsby-starter-kaordica`
-1. `cd` into the created directory
-1. Install all recommended extensions if using VSCode
-1. Run `gatsby develop` and follow the instructions from there
+1. Install [Node](https://nodejs.org), [npm](https://www.npmjs.com/) and the gatsby cli (`npm i -g gatsby-cli`)
+2. `cd` into the desired folder to store your project
+3. Run `gatsby new site-name https://github.com/hcavalieri/gatsby-starter-kaordica`
+4. `cd` into the created directory
+5. Install all recommended extensions if using VSCode
+6. Run `gatsby develop` and follow the instructions from there
 
 Feel free to leave your feedback and/or pull request!
 

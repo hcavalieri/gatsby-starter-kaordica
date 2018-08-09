@@ -25,12 +25,6 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
-      resolve: 'gatsby-plugin-sass',
-      options: {
-        file: 'src/styles/main',
-      },
-    },
-    {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         fileName: false,

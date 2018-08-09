@@ -1,9 +1,14 @@
 import * as React from 'react';
 import Helmet from 'react-helmet';
 import { graphql, StaticQuery } from 'gatsby';
+import { injectGlobal } from 'styled-components';
 
-import '../styles/sass/main.sass';
+import globalStyles from '../styles/global';
 import favicon from '../images/favicon-md.png';
+
+injectGlobal`
+  ${globalStyles}
+`;
 
 const LayoutBasis = ({ children }: any) => (
   <StaticQuery

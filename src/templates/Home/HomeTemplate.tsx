@@ -22,8 +22,7 @@ export const HomeTemplate: React.SFC<IHomeTemplateProps> = props => {
       <p>It also includes some boilerplate code for fetching data from a Sanity project inside <code>gatsby-node.js</code> and a few gatsby plugins that tend to be used by us. To start using this, we recommend to follow some first steps:</p>
       <ol>
         <li>Update <code>package.json</code> and <code>gatsby-config.js</code> at the root of the project to represent your information.</li>
-        <li>Go through all files in src/styles/sass/vars and update them to use your site's visual variables (typography, colors, etc.)</li>
-        <li>Do the same for the src/styles/theme.ts file</li>
+        <li>Go through all files in src/styles/theme and update them to use your site's visual variables (typography, colors, etc.). Read on <code>src/styles/README.md</code></li>
         <li>Replace the current favicon with your desired one at src/images</li>
         <li>If you haven't already, be sure to install the Prettier extension in your editor.</li>
         <li>Start building your site!</li>

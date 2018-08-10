@@ -48,3 +48,7 @@ If you're like us, Netlify will probably be a great fit. Publish your repo to Gi
 ## Rebuilding the website when content is changed
 
 To trigger automatic builds based on content authoring in Sanity, add a webhook at your site's "Build & deploy" settings in [app.netlify.com](https://app.netlify.com), copy it. Then go into [manage.sanity.io](https://manage.sanity.io) and in the corresponding project's settings add this copied webhook to call when content is changed.
+
+## Roadmap / TODO
+
+- Normalizers for lists

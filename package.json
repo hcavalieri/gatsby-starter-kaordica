@@ -15,7 +15,7 @@
     "babel-plugin-styled-components": "^1.5.1",
     "babel-plugin-transform-typescript": "^7.0.0-alpha.19",
     "dotenv": "^6.0.0",
-    "gatsby": "2.0.0-beta.93",
+    "gatsby": "2.0.0-beta.97",
     "gatsby-image": "2.0.0-beta.7",
     "gatsby-plugin-netlify": "2.0.0-beta.5",
     "gatsby-plugin-react-helmet": "3.0.0-beta.4",
@@ -43,7 +43,7 @@
     "@babel/preset-typescript": "^7.0.0-beta.49",
     "prettier": "^1.13.6",
     "tslint": "^5.11.0",
-    "typescript": "^2.9.1"
+    "typescript": "^3.0.1"
   },
   "repository": {
     "type": "git",

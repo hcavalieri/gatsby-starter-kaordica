@@ -1,12 +1,17 @@
 export interface IThemeColors {
+  // Brand colors
   primary: string;
-  success: string;
+  secondary?: string;
+  // Typography
   text: string;
   heading?: string;
-  greyLight: string;
-  greyBluish: string;
-  greyMed: string;
   link?: string;
+  // Helpers
+  success: string;
+  // Greys (useful for UI)
+  greyLight?: string;
+  greyMed?: string;
+  greyDark?: string;
 }
 
 export const themeColors: IThemeColors = {
@@ -15,7 +20,6 @@ export const themeColors: IThemeColors = {
   text: '#474747',
   heading: '#362e5c',
   greyLight: '#f1f1f1',
-  greyBluish: '#dfe6e9',
   greyMed: '#636e72',
 };
 

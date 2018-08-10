@@ -74,53 +74,18 @@ const headings: IHeadingProps[] = [
   },
 ];
 
-const headingsLg: IHeadingProps[] = [
-  // H1
-  {
-    size: 3.2,
-    lineHeight: 1.1,
-    mgTop: 0,
-    mgBottom: 1,
-  },
-  // H2
-  {
-    size: 2.25,
-    lineHeight: 1.2,
-    mgTop: 1.5,
-    mgBottom: 3,
-  },
-  // H3
-  {
-    size: 1.8,
-    lineHeight: 1.4,
-    mgTop: 2,
-    mgBottom: .5,
-  },
-  // H4
-  {
-    size: 1.2,
-    lineHeight: 1,
-    mgTop: 1.5,
-    mgBottom: .5,
-  },
-  // H5
-  {
-    size: 1,
-    lineHeight: 1.5,
-    mgTop: 1,
-    mgBottom: .5,
-  },
-];
-
 // Customize the headings properties for large
-// screens if needed
-// const headingsLg: IHeadingProps[] | null = null;
+// screens if needed by duplicating the headings array
+const headingsLg: IHeadingProps[] | null = null;
 
+// Read the IThemeTypography interface to learn
+// more about each variable
 export const themeTypography: IThemeTypography = {
   size: 18,
   lineHeight: 1.5,
+  fontFamily: 'Roboto',
   headings,
-  headingsLg: headingsLg,
+  headingsLg: headingsLg || headings,
 }
 
 export default themeTypography;

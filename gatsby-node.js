@@ -32,6 +32,8 @@
 // CREATING PAGES FROM DATA
 // ================
 
+// const path = require('path');
+
 // Write your GraphQL queries for data that will be
 // used to create pages in ./graphqlQueries.js
 // const graphqlQueries = require('./graphqlQueries');

@@ -1,7 +1,7 @@
 import { theme } from '../theme';
 import { hexToRgb } from '../helpers/hexToRgb';
 import { themeBodyFontFamily } from '../helpers/typography';
-import { media, breakpoints } from '../helpers/mediaQueries';
+import { breakpoints } from '../helpers/mediaQueries';
 
 export default `
   :root {
@@ -29,9 +29,11 @@ export default `
     margin: 0;
     overflow-x: hidden;
   }
-  @media screen and (min-width: ${breakpoints.large}) {
-    :root {
-      font-size: ${theme.typography.sizeLg || theme.typography.size}px;
-    }
-  }
+  ${theme.typography.sizeLg ?
+    `@media screen and (min-width: ${breakpoints.large}) {
+      :root {
+        font-size: ${theme.typography.sizeLg}px;
+      }
+    }`
+  : ''}
 `

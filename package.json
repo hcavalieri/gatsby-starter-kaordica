@@ -1,7 +1,7 @@
 {
   "name": "gatsby-starter-kaordica",
   "description": "Kaordica's starter for Gatsby projects",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "author": "Henrique Cavalieri <henrique@kaordica.com.br>",
   "license": "MIT",
   "dependencies": {
@@ -15,17 +15,17 @@
     "babel-plugin-styled-components": "^1.5.1",
     "babel-plugin-transform-typescript": "^7.0.0-alpha.19",
     "dotenv": "^6.0.0",
-    "gatsby": "2.0.0-beta.97",
-    "gatsby-image": "2.0.0-beta.7",
-    "gatsby-plugin-netlify": "2.0.0-beta.5",
-    "gatsby-plugin-react-helmet": "3.0.0-beta.4",
-    "gatsby-plugin-sharp": "2.0.0-beta.7",
-    "gatsby-plugin-styled-components": "3.0.0-beta.3",
-    "gatsby-plugin-typescript": "2.0.0-beta.7",
-    "gatsby-source-filesystem": "2.0.1-beta.10",
-    "gatsby-source-sanity": "^0.3.3",
-    "gatsby-transformer-json": "2.1.1-beta.3",
-    "gatsby-transformer-sharp": "2.1.1-beta.6",
+    "gatsby": "next",
+    "gatsby-image": "next",
+    "gatsby-plugin-netlify": "next",
+    "gatsby-plugin-react-helmet": "next",
+    "gatsby-plugin-sharp": "next",
+    "gatsby-plugin-styled-components": "next",
+    "gatsby-plugin-typescript": "next",
+    "gatsby-source-filesystem": "next",
+    "gatsby-source-sanity": "^0.4.1",
+    "gatsby-transformer-json": "next",
+    "gatsby-transformer-sharp": "next",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-helmet": "^5.2.0",
@@ -47,6 +47,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/kaordica/gatsby-starter-kaordica"
   }
 }

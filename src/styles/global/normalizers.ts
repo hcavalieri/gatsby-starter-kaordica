@@ -23,7 +23,7 @@ export default `
   img {
     display: block;
     max-width: 100%;
-    margin: ${leading(1.5, 'auto')};
+    margin: ${leading(1.5, 0)};
   }
 
   hr {
@@ -34,5 +34,14 @@ export default `
       .7
     )};
     margin: ${leading(1.5, 0)};
+  }
+
+  ul, ol {
+    padding: 0 0 0 1rem;
+    margin: ${leading(1, 0)};
+  }
+
+  li {
+    margin: ${leading(.5, 0)}
   }
 `;

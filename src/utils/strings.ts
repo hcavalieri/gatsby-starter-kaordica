@@ -39,6 +39,8 @@ export const removeWhitespace = (str: string) => {
   return str.replace(/\s/g, "");
 }
 
+// Useful to get only numbers from phone numbers
+// Can be chained with removeWhitespace()
 export const removeSpecialCharacters = (str: string) => {
   return str.replace(/[\-\(\)\+]/g, "")
 }
@@ -47,4 +49,8 @@ export const removeSpecialCharacters = (str: string) => {
 // with a / or not in order to normalize it for usage in links
 export const getProperSlug = (slug: string) => {
   return slug.substr(0,1) === '/' ? slug : `/${slug}`;
+}
+
+export const checkIfAbsURL = (url: string) => {
+  return url.includes('http');
 }

@@ -1,23 +1,23 @@
 import * as React from 'react';
+
 import { BasicLayout } from '../../layouts/BasicLayout';
 import { HomeFeedback } from './components/HomeFeedback';
+import { Header } from '../../components/Header';
+import { PageMeta } from '../../components/PageMeta';
 
 export interface IHomeTemplateProps {
-  meta: {
-    title: string;
-    description: string;
-  }
+  title: string;
+  description: string;
 }
 
 export const HomeTemplate: React.SFC<IHomeTemplateProps> = props => {
   return (
     <BasicLayout>
-      {/*
-        text_center class can be found at
-        src/styles/_helpers.sass and can
-        be used as a quick styling tool
-       */}
-      <h1 className="text_center">{props.meta.title}</h1>
+      <PageMeta
+        title={props.title}
+        slug="/"
+      />
+      <Header />
       <p>This starter is in constant evolution to provide a faster and better way to set-up a Gatsby website project. It relies on <b>Typescript</b> for typechecking, <b>styled-components</b> for styling components (duh) and <b>sass</b> for global styles.</p>
       <p>It also includes some boilerplate code for fetching data from a Sanity project inside <code>gatsby-node.js</code> and a few gatsby plugins that tend to be used by us. To start using this, we recommend to follow some first steps:</p>
       <ol>

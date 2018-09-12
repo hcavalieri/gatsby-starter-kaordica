@@ -1,32 +1,6 @@
-// FOLOW INSTRUCTIONS IN COMMENTS
-// (FEEL FREE TO DELETE THEM)
-
-// ================
-// MODIFYING NODES CREATED BY SOURCE-SANITY
-// ================
-
-// const slugify = require('slugify');
-
-// Sometimes you'll need to attach new fields to
-// nodes created by the gatsby-source-sanity plugin
-// To do so, you'll use the onCreateNode API and check
-// the node's type:
-
-// exports.onCreateNode = ({ node, actions }) => {
-//   const { createNodeField } = actions;
-//   const { type } = node.internal;
-
-//   // Example of attaching a "slug" field to
-//   // post nodes (although this should be generated
-//   // inside of Sanity using the slug object)
-//   if (type === 'POST') {
-//     createNodeField({
-//       node,
-//       name: 'slug',
-//       value: slugify(node.name, { lower: true }),
-//     })
-//   }
-// }
+// Refer to gatsby-source-sanity's documentation if you
+// need to modify nodes coming in from Sanity:
+// https://github.com/hcavalieri/gatsby-source-sanity
 
 // ================
 // CREATING PAGES FROM DATA
@@ -35,7 +9,7 @@
 // const path = require('path');
 
 // Write your GraphQL queries for data that will be
-// used to create pages in ./graphqlQueries.js
+// used to create pages in ./graphqlQueries
 // const graphqlQueries = require('./graphqlQueries');
 
 // And then use the createPages API to do so
@@ -48,13 +22,15 @@
 
 //   const graphqlData = await graphql(graphqlQueries);
 
-//   graphqlData.data.sample.edges.forEach(({ node }) => {
-//     const path = `/samples/${node.slug}`;
+//   graphqlData.data.posts.edges.forEach(({ node }) => {
+//     const { slug } = node.meta;
+//     const path = slug.substr(0,1) === '/' ?
+//       slug : `/${slug}`;
 //     createPage({
 //       path,
 //       component: sampleTemplate,
 //       context: {
-//         node, // you can access this inside the template
+//         node,
 //       },
 //     });
 //   })

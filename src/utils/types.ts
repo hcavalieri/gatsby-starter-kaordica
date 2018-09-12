@@ -6,27 +6,20 @@ export type HandleInput = (stateName: string) => (event: React.ChangeEvent<HTMLI
 export type InputChange = (event: React.ChangeEvent<HTMLInputElement>) => any;
 
 // Data-specific types
-export interface NameSlug {
-  name: string;
-  slug: string;
-}
 
 export interface ITitleSubtitle {
   title: string;
   subtitle: string;
 }
 
-export interface ISimpleSEO {
-  title?: string;
-  description?: string;
-  image?: string;
-}
-
 export interface IImageField {
   imageUrl: string;
   alt?: string;
   localFile?: {
-    childImageSharp: any;
+    childImageSharp: {
+      fixed?: any;
+      fluid?: any;
+    };
   };
 }
 

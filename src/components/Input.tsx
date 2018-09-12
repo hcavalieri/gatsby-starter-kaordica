@@ -36,12 +36,11 @@ const inputBaseStyle = `
 `;
 
 const TextArea = styled.textarea`
-  ${inputBaseStyle}
-  resize: vertical;
+  ${inputBaseStyle} resize: vertical;
 `;
 
 const StyledInput = styled.input`
-  ${inputBaseStyle}
+  ${inputBaseStyle};
 `;
 
 const StyledLabel = styled.label``;
@@ -51,7 +50,7 @@ export class Input extends React.Component<IInputProps, IInputState> {
     super(props);
     this.state = {
       focused: false,
-    }
+    };
   }
 
   public handleFocus = (e: any) => {
@@ -63,37 +62,46 @@ export class Input extends React.Component<IInputProps, IInputState> {
   }
 
   public render() {
-    const self = this;
-    const { name, type, label, required, onChange, isTextArea, value, pattern, title, placeholder } = self.props;
-    const id = self.props.id ? self.props.id : name;
+    const { props } = this;
+    const {
+      name,
+      type,
+      label,
+      required,
+      onChange,
+      isTextArea,
+      value,
+      pattern,
+      title,
+      placeholder,
+    } = props;
+    const id = props.id ? props.id : name;
 
     const inputProps = {
       type: type || 'text',
       value,
-      name,
       id,
       required: required ? true : false,
       onChange,
-      onFocus: self.handleFocus,
-      onBlur: self.handleFocus,
-      focused: self.state.focused,
+      onFocus: this.handleFocus,
+      name,
+      onBlur: this.handleFocus,
+      focused: this.state.focused,
       pattern,
       title,
       placeholder,
-    }
+    };
 
-    return(
+    return (
       <InputWrapper>
-        <StyledLabel
-          htmlFor={id}
-        >
-          {label}
-        </StyledLabel>
-        {isTextArea ?
+        <StyledLabel htmlFor={id}>{label}</StyledLabel>
+        {isTextArea ? (
           <TextArea {...inputProps} rows={5} />
-          : <StyledInput {...inputProps} />}
+        ) : (
+          <StyledInput {...inputProps} />
+        )}
       </InputWrapper>
-    )
+    );
   }
 }
 

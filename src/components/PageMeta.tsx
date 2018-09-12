@@ -11,21 +11,20 @@ export interface IPageMeta {
 }
 
 export const PageMeta: React.SFC<IPageMeta> = props => {
-  const description = props.seoDescription ?
-    `${props.seoDescription.substr(0, 145)}...`
+  const description = props.seoDescription
+    ? `${props.seoDescription.substr(0, 145)}...`
     : `Saiba mais`;
   return (
     <Helmet>
       <title>{props.seoTitle || `${props.title} - [SITE NAME]`}</title>
       <meta name="description" content={description} />
-      {props.image && props.image.imageUrl ?
+      {props.image && props.image.imageUrl ? (
         <meta name="og:image" content={props.image.imageUrl} />
-        : null
-      }
+      ) : null}
     </Helmet>
-  )
-}
+  );
+};
 
-PageMeta.displayName = 'PageMeta'
+PageMeta.displayName = 'PageMeta';
 
 export default PageMeta;

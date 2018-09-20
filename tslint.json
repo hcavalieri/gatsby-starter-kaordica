@@ -25,8 +25,6 @@
     // as avoids specific keywords to be used in variable names, such as
     // "String", "undefined", etc.
     "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"],
-    // Avoids the usage of incorrect strings for the typeof function
-    "typeof-compare": true,
     // Avoids errors regarding the alphabetical order of variables in an object
     "object-literal-sort-keys": false
   },

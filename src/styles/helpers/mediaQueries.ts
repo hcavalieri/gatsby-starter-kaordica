@@ -1,16 +1,12 @@
 import { css } from 'styled-components';
 
-type TmediaQuery = {
-  [key: string]: (...args) => any;
-}
-
 export const breakpoints = {
   phone: '468px',
   tablet: '768px',
   large: '940px',
   laptop: '1366px',
   desktop: '1920px',
-}
+};
 
 // will return an object of functions that you can use to
 // provide easy mixins for media queries in styled components
@@ -20,25 +16,27 @@ export const breakpoints = {
 //    font-size: 2rem;
 //  `}
 // `;
-export const media: TmediaQuery = Object.keys(breakpoints).reduce(
-  (acc: TmediaQuery, label: string) => {
+export const media: any = Object.keys(breakpoints).reduce(
+  (acc: any, label: string) => {
     acc = {
       ...acc,
-      [`${label}Max`]: (...args): any[] => css`
+      [`${label}Max`]: (...args: any[]) => css`
         @media (max-width: ${breakpoints[label]}) {
           /* TODO */
           /* typechecking */
-          ${css(...args)}
+          ${css(...args)};
         }
       `,
-      [`${label}Min`]: (...args) => css`
+      [`${label}Min`]: (...args: any[]) => css`
         @media (min-width: ${breakpoints[label]}) {
-          ${css(...args)}
+          ${css(...args)};
         }
       `,
     };
 
-    return acc
-}, {})
+    return acc;
+  },
+  {}
+);
 
 export default media;

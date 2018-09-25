@@ -2,8 +2,17 @@
   "editor.tabSize": 2,
   "editor.wordWrap": "bounded",
   "editor.wordWrapColumn": 80,
-  "scss.lint.duplicateProperties": "warning",
-  "scss.lint.zeroUnits": "warning",
-  "scss.lint.universalSelector": "warning",
-  "scss.lint.unknownVendorSpecificProperties": "warning",
+  "breadcrumbs.enabled": true,
+  "markdown.preview.breaks": true,
+  // Feel free to customize this to your project's branding
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#ce003c"
+    /*
+      You can also color the titleBar.
+      To enable this on Windows and Linux, go to
+      userSettings and set "window.titleBarStyle": "custom"
+    */
+    // "titleBar.activeBackground": "#202779",
+    // "titleBar.activeForeground": "#fff",
+  }
 }

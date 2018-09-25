@@ -1,12 +1,12 @@
 import * as React from 'react';
 import Helmet from 'react-helmet';
 import { graphql, StaticQuery } from 'gatsby';
-import { injectGlobal } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 import globalStyles from '../styles/global';
 import favicon from '../images/favicon-md.png';
 
-injectGlobal`
+const GlobalStyles = createGlobalStyle`
   ${globalStyles}
 `;
 
@@ -16,23 +16,27 @@ const LayoutBasis = ({ children }: any) => (
       query SiteTitleQuery {
         site {
           siteMetadata {
-            title,
-            description,
+            title
+            description
           }
         }
       }
     `}
     render={data => (
       <>
+        <GlobalStyles />
         <Helmet>
           <title>{data.site.siteMetadata.title}</title>
-          <meta name="description" content={data.site.siteMetadata.description} />
+          <meta
+            name="description"
+            content={data.site.siteMetadata.description}
+          />
           <link rel="icon" type="image/png" sizes="64x64" href={favicon} />
         </Helmet>
         {children}
       </>
     )}
   />
-)
+);
 
-export default LayoutBasis
+export default LayoutBasis;

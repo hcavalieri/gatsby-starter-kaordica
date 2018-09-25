@@ -1,11 +1,9 @@
 {
   "recommendations": [
-    "mikestead.dotenv",
     "jpoissonnier.vscode-styled-components",
     "dbaeumer.vscode-eslint",
     "eg2.tslint",
     "esbenp.prettier-vscode",
-    "robinbentley.sass-indented",
-    "shardulm94.trailing-spaces",
+    "shardulm94.trailing-spaces"
   ]
 }

@@ -10,6 +10,6 @@ export const themeMaxContainer: IThemeMaxContainer = {
   md: '900px',
   lg: '1200px',
   xl: '1500px',
-}
+};
 
 export default themeMaxContainer;

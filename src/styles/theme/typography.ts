@@ -63,14 +63,14 @@ const headings: IHeadingProps[] = [
     size: 1.2,
     lineHeight: 1.5,
     mgTop: 2,
-    mgBottom: .5,
+    mgBottom: 0.5,
   },
   // H5
   {
     size: 1,
     lineHeight: 1.5,
     mgTop: 1,
-    mgBottom: .5,
+    mgBottom: 0.5,
   },
 ];
 
@@ -86,6 +86,6 @@ export const themeTypography: IThemeTypography = {
   fontFamily: 'Roboto',
   headings,
   headingsLg: headingsLg || headings,
-}
+};
 
 export default themeTypography;

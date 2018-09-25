@@ -1,6 +1,6 @@
-import { theme } from "../theme";
-import { hexToRgb } from "../helpers/hexToRgb";
-import { leading } from "../helpers/typography";
+import { theme } from '../theme';
+import { hexToRgb } from '../helpers/hexToRgb';
+import { leading } from '../helpers/typography';
 
 export default `
   a {
@@ -8,10 +8,7 @@ export default `
     transition: ${theme.transitions.default} color;
 
     &:hover {
-      color: ${hexToRgb(
-        theme.colors.link || theme.colors.primary,
-        .7
-      )};
+      color: ${hexToRgb(theme.colors.link || theme.colors.primary, 0.7)};
     }
   }
 
@@ -29,10 +26,7 @@ export default `
   hr {
     height: 1px;
     border: 0;
-    background: ${hexToRgb(
-      theme.colors.heading || theme.colors.text,
-      .7
-    )};
+    background: ${hexToRgb(theme.colors.heading || theme.colors.text, 0.7)};
     margin: ${leading(1.5, 0)};
   }
 
@@ -42,6 +36,6 @@ export default `
   }
 
   li {
-    margin: ${leading(.5, 0)}
+    margin: ${leading(0.5, 0)}
   }
 `;

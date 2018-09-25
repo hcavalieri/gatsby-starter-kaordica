@@ -1,10 +1,10 @@
-import { leading } from "../helpers/typography";
+import { leading } from '../helpers/typography';
 
-const sides = [
-  'bottom', 'top', 'left', 'right',
-]
+const sides = ['bottom', 'top', 'left', 'right'];
 
-export default sides.map(side => `
+export default sides
+  .map(
+    side => `
   .mg-${side}_double {
     margin-${side}: ${leading(2)}
   }
@@ -18,10 +18,10 @@ export default sides.map(side => `
     padding-${side}: ${leading(1)};
   }
   .mg-${side}_half {
-    margin-${side}: ${leading(.5)};
+    margin-${side}: ${leading(0.5)};
   }
   .pad-${side}_half {
-    padding-${side}: ${leading(.5)};
+    padding-${side}: ${leading(0.5)};
   }
   .mg-${side}_none {
     margin-${side}: 0;
@@ -30,4 +30,5 @@ export default sides.map(side => `
     padding-${side}: 0;
   }
 `
-).join('')
+  )
+  .join('');

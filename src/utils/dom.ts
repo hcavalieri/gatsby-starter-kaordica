@@ -3,7 +3,7 @@ export const scrollToId = (id: string) => {
 
   if (object) {
     object.scrollIntoView({
-      behavior: 'smooth'
-    })
+      behavior: 'smooth',
+    });
   }
-}
+};

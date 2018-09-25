@@ -59,7 +59,7 @@ export class Input extends React.Component<IInputProps, IInputState> {
       focused: !this.state.focused,
     };
     this.setState(newState);
-  }
+  };
 
   public render() {
     const { props } = this;

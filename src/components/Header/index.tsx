@@ -5,7 +5,7 @@ import { IHeaderTemplateProps, HeaderTemplate } from './HeaderTemplate';
 export interface IHeaderData {
   site: {
     siteMetadata: IHeaderTemplateProps;
-  }
+  };
 }
 
 export const Header = () => (
@@ -19,7 +19,9 @@ export const Header = () => (
         }
       }
     `}
-    render={({ site: { siteMetadata }}: IHeaderData) => <HeaderTemplate {...siteMetadata} />}
+    render={({ site: { siteMetadata } }: IHeaderData) => (
+      <HeaderTemplate {...siteMetadata} />
+    )}
   />
 );
 

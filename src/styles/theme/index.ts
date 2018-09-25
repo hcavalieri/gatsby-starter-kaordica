@@ -1,7 +1,12 @@
-import { IThemeColors, themeColors } from "./colors";
-import { IThemeBoxShadow, IThemeTransitions, themeBoxShadow, themeTransitions } from "./misc";
-import { IThemeTypography, themeTypography } from "./typography";
-import { themeMaxContainer, IThemeMaxContainer } from "./structure";
+import { IThemeColors, themeColors } from './colors';
+import {
+  IThemeBoxShadow,
+  IThemeTransitions,
+  themeBoxShadow,
+  themeTransitions,
+} from './misc';
+import { IThemeTypography, themeTypography } from './typography';
+import { themeMaxContainer, IThemeMaxContainer } from './structure';
 
 interface ITheme {
   colors: IThemeColors;

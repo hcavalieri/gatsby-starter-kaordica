@@ -29,11 +29,13 @@ export default `
     margin: 0;
     overflow-x: hidden;
   }
-  ${theme.typography.sizeLg ?
-    `@media screen and (min-width: ${breakpoints.large}) {
+  ${
+    theme.typography.sizeLg
+      ? `@media screen and (min-width: ${breakpoints.large}) {
       :root {
         font-size: ${theme.typography.sizeLg}px;
       }
     }`
-  : ''}
-`
+      : ''
+  }
+`;

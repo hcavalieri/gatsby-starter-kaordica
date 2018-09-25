@@ -30,15 +30,11 @@ const StyledBaseIcon = styled.span`
     max-height: 100%;
     display: block;
   }
-`
+`;
 
 export const BaseIcon: React.SFC<IBaseIconProps> = props => {
-  return (
-    <StyledBaseIcon {...props}>
-      {props.children}
-    </StyledBaseIcon>
-  )
-}
+  return <StyledBaseIcon {...props}>{props.children}</StyledBaseIcon>;
+};
 
 BaseIcon.displayName = 'Icon';
 

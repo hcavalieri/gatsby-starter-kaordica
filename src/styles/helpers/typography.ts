@@ -1,21 +1,28 @@
 import typography from '../theme/typography';
 
-const fallBackFamily = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', Arial, sans-serif";
+const fallBackFamily =
+  "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', Arial, sans-serif";
 
-const getFontFamilyString = (family?: string) => `${
-  family ? `${family}, ` : ''
-}${typography.fallbackFont || fallBackFamily}`
+const getFontFamilyString = (family?: string) =>
+  `${family ? `${family}, ` : ''}${typography.fallbackFont || fallBackFamily}`;
 
 export const themeBodyFontFamily = getFontFamilyString(typography.fontFamily);
 
-export const themeHeadingFontFamily = getFontFamilyString(typography.fontFamilyHeading);
+export const themeHeadingFontFamily = getFontFamilyString(
+  typography.fontFamilyHeading
+);
 
-export function leading(top: number | string, right?: number | string, bottom?: number, left?: number) {
+export function leading(
+  top: number | string,
+  right?: number | string,
+  bottom?: number,
+  left?: number
+) {
   if (!right && right !== 0) {
-    if(typeof top === 'number') {
-      return `${top * typography.lineHeight}rem`
+    if (typeof top === 'number') {
+      return `${top * typography.lineHeight}rem`;
     } else if (typeof top === 'string') {
-      return 'auto'
+      return 'auto';
     }
   } else if (!bottom && bottom !== 0) {
     let mgTop;
@@ -30,14 +37,17 @@ export function leading(top: number | string, right?: number | string, bottom?: 
     } else if (typeof right === 'string') {
       mgRight = 'auto';
     }
-    return `${mgTop} ${mgRight}`
-  } else if(!left && left !== 0) {
+    return `${mgTop} ${mgRight}`;
+  } else if (!left && left !== 0) {
     if (typeof right === 'number' && typeof top === 'number') {
-      return `${top * typography.lineHeight}rem ${right * typography.lineHeight}rem ${bottom * typography.lineHeight}rem`
+      return `${top * typography.lineHeight}rem ${right *
+        typography.lineHeight}rem ${bottom * typography.lineHeight}rem`;
     }
   } else {
     if (typeof right === 'number' && typeof top === 'number') {
-      return `${top * typography.lineHeight}rem ${right * typography.lineHeight}rem ${bottom * typography.lineHeight}rem ${left * typography.lineHeight}rem`
+      return `${top * typography.lineHeight}rem ${right *
+        typography.lineHeight}rem ${bottom * typography.lineHeight}rem ${left *
+        typography.lineHeight}rem`;
     }
   }
   return '';

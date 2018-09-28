@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import theme from '../styles/theme';
 import LayoutBasis from './LayoutBasis';
 
 export interface IBasicLayoutProps {
@@ -9,11 +8,13 @@ export interface IBasicLayoutProps {
 }
 
 const Container = styled.main`
-  max-width: calc(${theme.maxContainer.sm} + 2rem);
+  max-width: calc(600px + 2rem);
   padding: 0 1rem;
   margin: 5rem auto;
 `;
 
+// Go ahead and delete / change this layout, it's meant for readability of
+// the guide only ;)
 export const BasicLayout: React.SFC<IBasicLayoutProps> = props => {
   return (
     <LayoutBasis>

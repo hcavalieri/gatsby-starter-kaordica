@@ -2,6 +2,8 @@
 
 This folder is meant to concentrate global styles and reusable styled-components strings and components.
 
+**Suggestion:** before starting, go ahead and create a theme for your website at the [konfigurator typography tool](https://konfigurator.kaordi.ca), the just save the file and replace `src/styles/theme.ts` and you're set ;)
+
 ## How it's structured
 
 ### The `helpers` folder
@@ -12,7 +14,7 @@ Here's where you'll find useful mixins and functions to be used with styled-comp
 
 All global CSS is meant to be applied through this folder. The default files are related mostly to typography, setting the rythm for all written content for the website. Make sure to change these - especially the typography, misc and color variables - before styling your website.
 
-**Note:** If you need custom global styles, go ahead and include them in the string exported as default in `customGlobal.ts`.
+**Note:** If you need custom global styles, go ahead and include them in the string exported as default in `customStyles.ts`.
 
 ### `theme.ts`
 

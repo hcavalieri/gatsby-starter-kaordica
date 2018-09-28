@@ -1,15 +1,14 @@
-import base from './base';
-import normalizers from './normalizers';
-import customGlobal from './customGlobal';
-import helpers from './helpers';
-import typography from './typography';
+import { createGlobalStyle } from 'styled-components';
+import { baseStyles } from './baseStyles';
+import { customStyles } from './customStyles';
+import { getBaseTypography, getBlockTextTypography } from './globalTypography';
+import { theme } from '../theme';
 
-export const globalStyles = `
-  ${base}
-  ${typography}
-  ${normalizers}
-  ${helpers}
-  ${customGlobal}
+export const GlobalStyles = createGlobalStyle`
+  ${baseStyles}
+  ${getBaseTypography(theme)}
+  ${getBlockTextTypography(theme)}
+  ${customStyles}
 `;
 
-export default globalStyles;
+export default GlobalStyles;

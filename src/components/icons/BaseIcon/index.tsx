@@ -25,7 +25,8 @@ const StyledBaseIcon = styled.span`
   width: ${(props: IBaseIconProps) => props.width || '2rem'};
   svg {
     fill: ${(props: IBaseIconProps) => props.color || theme.colors.text};
-    transition: ${theme.transitions.default} fill;
+    /* TODO: replace this with theme-specific variables */
+    transition: 0.2s fill;
     max-width: 100%;
     max-height: 100%;
     display: block;

@@ -1,42 +1,26 @@
-import { css } from 'styled-components';
-
 export const breakpoints = {
-  phone: '468px',
-  tablet: '768px',
-  large: '940px',
-  laptop: '1366px',
-  desktop: '1920px',
+  phone: 468,
+  tablet: 768,
+  large: 940,
+  laptop: 1366,
+  desktop: 1920,
 };
 
-// will return an object of functions that you can use to
-// provide easy mixins for media queries in styled components
-// Ex: const Button = styled.button`
-//  font-size: 1rem;
-//  ${media.largeMin`
-//    font-size: 2rem;
-//  `}
-// `;
-export const media: any = Object.keys(breakpoints).reduce(
-  (acc: any, label: string) => {
-    acc = {
-      ...acc,
-      [`${label}Max`]: (...args: any[]) => css`
-        @media (max-width: ${breakpoints[label]}) {
-          /* TODO */
-          /* typechecking */
-          ${css(...args)};
-        }
-      `,
-      [`${label}Min`]: (...args: any[]) => css`
-        @media (min-width: ${breakpoints[label]}) {
-          ${css(...args)};
-        }
-      `,
-    };
+// Each media fragment only exposes the (min-width / max-width: Ypx)
+// so then we can compose multiple media queries such as:
+// @media ${medias.phoneMin} and ${media.tabletMax}
+export const getMediaFragment = (breakpoint: number, isMax: boolean = false) =>
+  `(${isMax ? 'max' : 'min'}-width: ${isMax ? breakpoint - 1 : breakpoint}px)`;
 
-    return acc;
-  },
-  {}
-);
-
-export default media;
+export const medias = {
+  phoneMax: getMediaFragment(breakpoints.phone, true),
+  phoneMin: getMediaFragment(breakpoints.phone),
+  tabletMax: getMediaFragment(breakpoints.tablet, true),
+  tabletMin: getMediaFragment(breakpoints.tablet),
+  largeMax: getMediaFragment(breakpoints.large, true),
+  largeMin: getMediaFragment(breakpoints.large),
+  laptopMax: getMediaFragment(breakpoints.laptop, true),
+  laptopMin: getMediaFragment(breakpoints.laptop),
+  desktopMax: getMediaFragment(breakpoints.desktop, true),
+  desktopMin: getMediaFragment(breakpoints.desktop),
+};

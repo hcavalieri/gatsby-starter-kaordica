@@ -1,14 +1,14 @@
 import * as React from 'react';
-import styled from 'styled-components';
 
 import LayoutBasis from './LayoutBasis';
+import styled from '../styles/styledComponents';
 
 export interface IBasicLayoutProps {
   children: any;
 }
 
 const Container = styled.main`
-  max-width: calc(600px + 2rem);
+  max-width: ${props => props.theme.body.maxWidth}px;
   padding: 0 1rem;
   margin: 5rem auto;
 `;

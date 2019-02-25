@@ -51,5 +51,6 @@ To trigger automatic builds based on content authoring in Sanity, add a webhook 
 
 ## Roadmap / TODO
 
-- Normalizers for lists
 - change breakpoints in mediaQueries.ts to be numbers for better flexibility
+- fix font-family rendering to avoid empty strings (`font-family: '', -apple-system (...)`)
+- Change every `Container` tag for `Wrapper`

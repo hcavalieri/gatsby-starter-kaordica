@@ -35,7 +35,8 @@
     ],
     // Avoids errors regarding the alphabetical order of variables in an object
     "object-literal-sort-keys": false,
-    "jsx-no-lambda": false
+    "jsx-no-lambda": false,
+    "member-access": false
   },
   "rulesDirectory": []
 }

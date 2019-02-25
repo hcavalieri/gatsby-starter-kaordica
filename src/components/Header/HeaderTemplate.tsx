@@ -5,13 +5,13 @@ export interface IHeaderTemplateProps {
   title: string;
 }
 
-const Container = styled.div``;
+const Wrapper = styled.header``;
 
 export const HeaderTemplate: React.SFC<IHeaderTemplateProps> = props => {
   return (
-    <Container>
+    <Wrapper>
       <h1>{props.title}</h1>
-    </Container>
+    </Wrapper>
   );
 };
 

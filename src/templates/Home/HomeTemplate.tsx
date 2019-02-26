@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-import { BasicLayout } from '../../layouts/BasicLayout';
 import { HomeFeedback } from './components/HomeFeedback';
 import { Header } from '../../components/Header';
 import { PageMeta } from '../../components/PageMeta';
+import LayoutBasis from '../../layouts/LayoutBasis';
 
 export interface IHomeTemplateProps {
   title: string;
@@ -12,8 +12,8 @@ export interface IHomeTemplateProps {
 
 export const HomeTemplate: React.SFC<IHomeTemplateProps> = props => {
   return (
-    <BasicLayout>
-      <PageMeta title={props.title} slug="/" />
+    <LayoutBasis>
+      <PageMeta title={props.title} />
       <Header />
       <p>
         This starter is in constant evolution to provide a faster and better way
@@ -45,7 +45,7 @@ export const HomeTemplate: React.SFC<IHomeTemplateProps> = props => {
         <li>Start building your site!</li>
       </ol>
       <HomeFeedback />
-    </BasicLayout>
+    </LayoutBasis>
   );
 };
 

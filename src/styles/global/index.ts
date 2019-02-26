@@ -1,12 +1,13 @@
-import { createGlobalStyle } from '../styledComponents';
+import { createGlobalStyle } from 'styled-components';
 import { baseStyles } from './baseStyles';
 import { customStyles } from './customStyles';
 import { getBaseTypography, getBlockTextTypography } from './globalTypography';
+import theme from '../theme';
 
 export const GlobalStyles = createGlobalStyle`
   ${baseStyles}
-  ${props => getBaseTypography(props.theme)}
-  ${props => getBlockTextTypography(props.theme)}
+  ${getBaseTypography(theme)}
+  ${getBlockTextTypography(theme)}
   ${customStyles}
 `;
 

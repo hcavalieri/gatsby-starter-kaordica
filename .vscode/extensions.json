@@ -1,9 +1,7 @@
 {
   "recommendations": [
     "jpoissonnier.vscode-styled-components",
-    "dbaeumer.vscode-eslint",
     "eg2.tslint",
-    "esbenp.prettier-vscode",
-    "shardulm94.trailing-spaces"
+    "esbenp.prettier-vscode"
   ]
 }
